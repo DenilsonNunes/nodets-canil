@@ -1,10 +1,6 @@
-// Pegar todos os Pets
-// Filtrar os pets por tipo
 
-// Filtrar os pets por nome
 type PetType = "dog" | "cat" | "fish";
  
-// criando type para o PET
 type Pet = {
     type: PetType,
     image: string,
@@ -137,14 +133,11 @@ const data: Array<Pet> = [
 
 
 export const Pet = {
-    // Obtendo todos os pets
     getall: (): Array<Pet> => {
         return data;
     },
-    // Obetendo por filtro
     getFromType: (type: PetType): Array<Pet> => {
         return data.filter(item =>{
-            // retornando somente os pets com o tipo informado no parametro
             if(item.type === type){
                 return true;
             } else {
@@ -152,7 +145,6 @@ export const Pet = {
             }
         })
     },
-    // Obtendo pelo nome
     getFromName: (name: string): Array<Pet> => {
         return data.filter(item =>{
             if(item.name.toLowerCase().indexOf(name.toLowerCase()) > -1){

@@ -1,20 +1,16 @@
 import { Request, Response }from "express";
 
-// importando a função do active no menu
 import {crearteMenuObject} from "../helpers/createMenuObject";
 
-// Importando o models de pet
 import {Pet} from '../models/pet';
 
 
 
 
-// renderizando as paginas de acordo com suas rortas
 export const home = (req: Request, res: Response) => {
     let list = Pet.getall();
 
     res.render('pages/page',{
-        // função que verifica o menu ex: dog,cat,fish ou all -> todos
         menu: crearteMenuObject('all'),
         banner: {
             title: 'Todos os animais',

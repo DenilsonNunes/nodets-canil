@@ -3,12 +3,9 @@ import * as PageController from '../controllers/pageController'
 import * as SearchController from '../controllers/searchController'
 
 
-
-
 const router = Router();
 
 
-// Gerenciando rotas, importando dos controllers
 router.get('/', PageController.home);
 router.get('/dogs', PageController.dogs);
 router.get('/cats', PageController.cats);
